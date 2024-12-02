@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProductClient": {
+    "produit": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/product-client",
+            "outputPath": "dist/produit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -23,18 +23,18 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+             "src/assets/style.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": [
+              "src/assets/script.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ProductClient:build:production"
+              "buildTarget": "produit:build:production"
             },
             "development": {
-              "buildTarget": "ProductClient:build:development"
+              "buildTarget": "produit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "708897f1-ee8a-477b-8c31-f2e4ac7bcbfd"
+    "analytics": false
   }
 }
