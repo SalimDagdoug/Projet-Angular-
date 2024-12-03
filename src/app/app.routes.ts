@@ -4,6 +4,7 @@ import { ProduitComponent } from './produit/produit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockComponent } from './stock/stock.component';
 import { AjoutproduitComponent } from './ajoutproduit/ajoutproduit.component';
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
 
 export const routes: Routes = [
   { 
@@ -37,7 +38,10 @@ export const routes: Routes = [
       {
         path: 'AddProduit',
         component: AjoutproduitComponent,
-      },
+      }, {
+         path: 'UpdateProduit/:id',
+         component: UpdateProduitComponent 
+        },
     ]
   },
   { path: '**', redirectTo: 'Home' }
