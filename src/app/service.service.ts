@@ -19,7 +19,5 @@ export class ServiceService {
     return this.http.post(this.apiUrl, data);
   }
 
-  getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
-  }
+
 }
