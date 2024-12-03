@@ -4,6 +4,7 @@ import { ProduitComponent } from './produit/produit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockComponent } from './stock/stock.component';
 import { StockdetailsComponent } from './stock/stockdetails/stockdetails.component';
+import { AjoutproduitComponent } from './ajoutproduit/ajoutproduit.component';
 
 export const routes: Routes = [
     { 
@@ -36,7 +37,11 @@ export const routes: Routes = [
         {
           path: 'Stock-details/:id', // Route pour afficher les détails du stock
           component: StockdetailsComponent, // Affiche les détails du stock
-        }
+        },
+        {
+          path: 'AddProduit',
+          component: AjoutproduitComponent,
+        },
       ]
     },
     { path: '**', redirectTo: 'Home' } // Redirection pour les chemins non définis
