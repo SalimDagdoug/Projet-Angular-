@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 export interface Produit {
   id: number;
@@ -32,5 +33,10 @@ export class ServiceService {
   // Delete a produit
   deleteProduit(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+
+  getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }
