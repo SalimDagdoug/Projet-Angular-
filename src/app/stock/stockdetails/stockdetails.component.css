@@ -222,3 +222,18 @@ button:hover {
   outline: none;  /* Remove the default outline */
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);  /* Add a shadow to highlight focus */
 }
+/* Success Snackbar */
+.success-snackbar {
+  background-color: #4caf50; /* Green background for success */
+  color: white; /* White text */
+  font-size: 16px; /* Optional: Adjust font size */
+  text-align: center;
+}
+
+/* Error Snackbar */
+.error-snackbar {
+  background-color: #f44336; /* Red background for errors */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}

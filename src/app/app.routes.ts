@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { ProduitComponent } from './produit/produit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockComponent } from './stock/stock.component';
+import { StockdetailsComponent } from './stock/stockdetails/stockdetails.component';
 
 export const routes: Routes = [
     { 
@@ -31,6 +32,10 @@ export const routes: Routes = [
         {
           path: 'Stock', // Sous-route pour "Stock"
           component: StockComponent,
+        },
+        {
+          path: 'Stock-details/:id', // Route pour afficher les détails du stock
+          component: StockdetailsComponent, // Affiche les détails du stock
         }
       ]
     },
