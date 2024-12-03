@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 export interface Produit {
   id: number;
@@ -18,6 +19,22 @@ export class ServiceService {
   ajoutproduit(data: any): Observable<any> {
     return this.http.post(this.apiUrl, data);
   }
+  getProduits(): Observable<Produit[]> {
+    return this.http.get<Produit[]>(this.apiUrl);
+  }
+
+  getProduitById(id: number): Observable<Produit> {
+    return this.http.get<Produit>(`${this.apiUrl}/${id}`);
+  }
+  updateProduit(id: number, produit: Produit): Observable<Produit> {
+    return this.http.put<Produit>(`${this.apiUrl}/${id}`, produit);
+  }
+
+  // Delete a produit
+  deleteProduit(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
 
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
